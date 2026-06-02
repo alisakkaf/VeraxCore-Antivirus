@@ -1,0 +1,2320 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VeraxCore Antivirus</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../Verax.qrc">
+    <normaloff>:/assets/logo.png</normaloff>:/assets/logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="rootLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="verax::ChromeBar" name="chromeBar" native="true"/>
+    </item>
+    <item>
+     <widget class="QWidget" name="bodyContainer" native="true">
+      <layout class="QHBoxLayout" name="bodyLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="sidebar">
+         <property name="minimumSize">
+          <size>
+           <width>220</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="sidebarLayout">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>16</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>16</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblAppNameVersion">
+            <property name="text">
+             <string>VeraxCore Antivirus</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spSidebar1">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>14</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navDashboard">
+            <property name="text">
+             <string>Dashboard</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navScanConfig">
+            <property name="text">
+             <string>New Scan</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navScan">
+            <property name="text">
+             <string>Scan Progress</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navQuarantine">
+            <property name="text">
+             <string>Quarantine</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navRepair">
+            <property name="text">
+             <string>Repair</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navSettings">
+            <property name="text">
+             <string>Settings</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="navAbout">
+            <property name="text">
+             <string>About</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spSidebar2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblBrandLabel">
+            <property name="text">
+             <string>By Ali Sakkaf</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="brandIconBox" native="true">
+            <layout class="QHBoxLayout" name="brandIconLayout">
+             <property name="spacing">
+              <number>8</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <widget class="QWidget" name="pageDashboard">
+          <layout class="QVBoxLayout" name="dashLayout">
+           <property name="spacing">
+            <number>22</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblDashTitle">
+             <property name="text">
+              <string>Dashboard</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblDashSubtitle">
+             <property name="text">
+              <string>System status at a glance — your security companion stays out of the way until you need it.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="verax::ProgressRing" name="dashRing" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>220</width>
+               <height>220</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="dashStatsRow" native="true">
+             <layout class="QHBoxLayout" name="dashStatsLayout">
+              <property name="spacing">
+               <number>16</number>
+              </property>
+              <item>
+               <widget class="verax::SurfaceCard" name="cardLastScan">
+                <layout class="QVBoxLayout" name="cardLastScanLayout">
+                 <property name="spacing">
+                  <number>4</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblLastScanHeader">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Last Scan</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblLastScan">
+                   <property name="text">
+                    <string>No scans yet</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="verax::SurfaceCard" name="cardQuarantine">
+                <layout class="QVBoxLayout" name="cardQuarantineLayout">
+                 <property name="spacing">
+                  <number>4</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblQuarantineHeader">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Quarantine</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblQuarantineSummary">
+                   <property name="text">
+                    <string>0 isolated</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="verax::SurfaceCard" name="cardSignatures">
+                <layout class="QVBoxLayout" name="cardSignaturesLayout">
+                 <property name="spacing">
+                  <number>4</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblSignaturesHeader">
+                   <property name="text">
+                    <string>Signature Database</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblSignaturesInfo">
+                   <property name="text">
+                    <string>Not loaded</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="dashActionsRow" native="true">
+             <layout class="QHBoxLayout" name="dashActionsLayout">
+              <property name="spacing">
+               <number>14</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="btnQuickScan">
+                <property name="text">
+                 <string>Quick Scan</string>
+                </property>
+                <property name="property" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnFullScan">
+                <property name="text">
+                 <string>Full Scan</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnUpdateSignatures">
+                <property name="text">
+                 <string>Online Update Signatures</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblCompanionAv">
+             <property name="text">
+              <string>Companion mode — detecting installed antivirus…</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="dashSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageScanConfig">
+          <layout class="QVBoxLayout" name="scanCfgLayout">
+           <property name="spacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblScanCfgTitle">
+             <property name="text">
+              <string>New Scan</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblScanCfgSubtitle">
+             <property name="text">
+              <string>Choose what to scan, how deep to go, and what to do with anything we find.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="scanCfgScroll">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scanCfgScrollContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>529</width>
+                <height>737</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="scanCfgInnerLayout">
+               <property name="spacing">
+                <number>18</number>
+               </property>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardDrives">
+                 <layout class="QVBoxLayout" name="cardDrivesLayout">
+                  <item>
+                   <widget class="QLabel" name="lblDrivesTitle">
+                    <property name="text">
+                     <string>Drives &amp; devices</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblDrivesHint">
+                    <property name="text">
+                     <string>Pick one or more drives. Removable devices (USB / SD) are highlighted.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="driveList" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardExtraTargets">
+                 <layout class="QVBoxLayout" name="cardExtraTargetsLayout">
+                  <item>
+                   <widget class="QLabel" name="lblExtraTitle">
+                    <property name="text">
+                     <string>Specific folders &amp; files</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="extraTargetsButtonsBox" native="true">
+                    <layout class="QHBoxLayout" name="extraTargetsButtonsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnAddFolder">
+                       <property name="text">
+                        <string>Add folder…</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnAddFile">
+                       <property name="text">
+                        <string>Add file…</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="extraSp">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="listExtraTargets"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardFilters">
+                 <layout class="QVBoxLayout" name="cardFiltersLayout">
+                  <item>
+                   <widget class="QLabel" name="lblFiltersTitle">
+                    <property name="text">
+                     <string>File type filter</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbExtExecutable">
+                    <property name="text">
+                     <string>Executables (.exe / .dll / .sys / .ocx / .drv)</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbExtScripts">
+                    <property name="text">
+                     <string>Scripts (.bat / .cmd / .ps1 / .vbs / .js)</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbExtDocuments">
+                    <property name="text">
+                     <string>Documents (.doc / .xls / .pdf)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbExtArchives">
+                    <property name="text">
+                     <string>Archives (.zip / .rar / .7z / .iso)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbExtAll">
+                    <property name="text">
+                     <string>All files (slowest, most thorough)</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardEngines">
+                 <layout class="QVBoxLayout" name="cardEnginesLayout">
+                  <item>
+                   <widget class="QLabel" name="lblEnginesTitle">
+                    <property name="text">
+                     <string>Detection engines</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbEngineSigDb">
+                    <property name="text">
+                     <string>Signature database match</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbEnginePe">
+                    <property name="text">
+                     <string>PE-header inspection (Floxif / Sality / Virut)</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbEngineHeuristics">
+                    <property name="text">
+                     <string>Heuristics (path, attributes, entropy)</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbEngineCloud">
+                    <property name="text">
+                     <string>Online cloud lookup (hash only)</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardAction">
+                 <layout class="QVBoxLayout" name="cardActionLayout">
+                  <item>
+                   <widget class="QLabel" name="lblActionTitle">
+                    <property name="text">
+                     <string>Action on detection</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="radioActionQuarantine">
+                    <property name="text">
+                     <string>Move to quarantine (recommended)</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="radioActionDelete">
+                    <property name="text">
+                     <string>Delete immediately</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="radioActionReport">
+                    <property name="text">
+                     <string>Report only (no automatic action)</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="scanCfgFooter" native="true">
+             <layout class="QHBoxLayout" name="scanCfgFooterLayout">
+              <item>
+               <spacer name="scanCfgSp">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnStartScan">
+                <property name="text">
+                 <string>Start Scan</string>
+                </property>
+                <property name="property" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageScan">
+          <layout class="QVBoxLayout" name="scanLayout">
+           <property name="spacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblScanTitle">
+             <property name="text">
+              <string>Scan Progress</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="scanHero" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QHBoxLayout" name="scanHeroLayout">
+              <property name="spacing">
+               <number>24</number>
+              </property>
+              <item>
+               <widget class="verax::ProgressRing" name="scanRing" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>200</width>
+                  <height>200</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="scanCounters" native="true">
+                <layout class="QVBoxLayout" name="scanCountersLayout">
+                 <property name="spacing">
+                  <number>8</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblScanCount">
+                   <property name="text">
+                    <string>Files scanned: 0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblScanThreats">
+                   <property name="text">
+                    <string>Threats: 0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblScanCurrentHeader">
+                   <property name="text">
+                    <string>Current file:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblScanCurrent">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="scanCountersSp">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>0</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="scanControls" native="true">
+                   <layout class="QHBoxLayout" name="scanControlsLayout">
+                    <item>
+                     <widget class="QPushButton" name="btnPauseScan">
+                      <property name="text">
+                       <string>Pause</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btnStopScan">
+                      <property name="text">
+                       <string>Stop</string>
+                      </property>
+                      <property name="property" stdset="0">
+                       <string notr="true">danger</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="scanControlsSp">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblThreatsTitle">
+             <property name="text">
+              <string>Detected threats</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="threatScroll">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="threatList">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>546</width>
+                <height>266</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="threatListLayout">
+               <property name="spacing">
+                <number>12</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <spacer name="threatListSp">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageQuarantine">
+          <layout class="QVBoxLayout" name="quarLayout">
+           <property name="spacing">
+            <number>16</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblQuarTitle">
+             <property name="text">
+              <string>Quarantine</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblQuarSubtitle">
+             <property name="text">
+              <string>Isolated files are encrypted in your private vault. Restore them if cleared, or delete them permanently.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="quarToolbar" native="true">
+             <layout class="QHBoxLayout" name="quarToolbarLayout">
+              <item>
+               <widget class="QLineEdit" name="editQuarantineSearch">
+                <property name="placeholderText">
+                 <string>Search by name, path or hash…</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnQRefresh">
+                <property name="text">
+                 <string>Refresh</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnQRestoreSelected">
+                <property name="text">
+                 <string>Restore selected</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnQDeleteSelected">
+                <property name="text">
+                 <string>Delete selected</string>
+                </property>
+                <property name="property" stdset="0">
+                 <string notr="true">danger</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnQExport">
+                <property name="text">
+                 <string>Export report</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableQuarantine">
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::ExtendedSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="columnCount">
+              <number>5</number>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>Detection</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Original path</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Date</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Size</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Hash</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageRepair">
+          <layout class="QVBoxLayout" name="repairLayout">
+           <property name="spacing">
+            <number>18</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblRepairTitle">
+             <property name="text">
+              <string>Repair Windows components</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblRepairSubtitle">
+             <property name="text">
+              <string>Common fixes for the things that make apps crash with 0xC0000005, hang at startup, or fail silently.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="repairTopRow" native="true">
+             <layout class="QHBoxLayout" name="repairTopLayout">
+              <item>
+               <spacer name="repairTopSp">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnRepairFixAll">
+                <property name="text">
+                 <string>Fix all</string>
+                </property>
+                <property name="property" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="repairScroll">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="repairScrollContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>444</width>
+                <height>730</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="repairGrid">
+               <property name="spacing">
+                <number>16</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="verax::SurfaceCard" name="cardRedist">
+                 <layout class="QVBoxLayout" name="cardRedistLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTRedist">
+                    <property name="text">
+                     <string>Visual C++ Redistributables</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDRedist">
+                    <property name="text">
+                     <string>Detects installed Microsoft VC++ runtimes and silently installs missing ones.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSRedist">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowRedistBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowRedistBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCRedist">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFRedist">
+                       <property name="text">
+                        <string>Fix</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="verax::SurfaceCard" name="cardHosts">
+                 <layout class="QVBoxLayout" name="cardHostsLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTHosts">
+                    <property name="text">
+                     <string>Windows hosts file</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDHosts">
+                    <property name="text">
+                     <string>Scans for malicious redirects, backs up the current file, then resets to OS-default.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSHosts">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowHostsBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowHostsBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCHosts">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFHosts">
+                       <property name="text">
+                        <string>Fix</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="verax::SurfaceCard" name="cardDefender">
+                 <layout class="QVBoxLayout" name="cardDefenderLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTDefender">
+                    <property name="text">
+                     <string>Defender exclusion</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDDefender">
+                    <property name="text">
+                     <string>Adds VeraxCore Antivirus to Microsoft Defender exclusions so it never interferes with scans.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSDefender">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowDefenderBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowDefenderBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCDefender">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFDefender">
+                       <property name="text">
+                        <string>Fix</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="verax::SurfaceCard" name="cardFirewall">
+                 <layout class="QVBoxLayout" name="cardFirewallLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTFirewall">
+                    <property name="text">
+                     <string>Windows Firewall rule</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDFirewall">
+                    <property name="text">
+                     <string>Adds inbound + outbound allow rules so the app can fetch updates without warnings.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSFirewall">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowFirewallBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowFirewallBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCFirewall">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFFirewall">
+                       <property name="text">
+                        <string>Fix</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="verax::SurfaceCard" name="cardCrypto">
+                 <layout class="QVBoxLayout" name="cardCryptoLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTCrypto">
+                    <property name="text">
+                     <string>Cryptographic services</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDCrypto">
+                    <property name="text">
+                     <string>Ensures CryptSvc + wintrust are running and set to start automatically.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSCrypto">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowCryptoBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowCryptoBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCCrypto">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFCrypto">
+                       <property name="text">
+                        <string>Fix</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="verax::SurfaceCard" name="cardDrivers">
+                 <layout class="QVBoxLayout" name="cardDriversLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTDrivers">
+                    <property name="text">
+                     <string>Phone drivers (.inf)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDDrivers">
+                    <property name="text">
+                     <string>Bulk-install Qualcomm, MediaTek, Spreadtrum, Samsung, etc. driver packs via pnputil.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSDrivers">
+                    <property name="text">
+                     <string>Status: unknown</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowDriversBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowDriversBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnRCDrivers">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFDrivers">
+                       <property name="text">
+                        <string>Pick folder &amp; install</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="verax::SurfaceCard" name="cardAppDlls">
+                 <layout class="QVBoxLayout" name="cardAppDllsLayout">
+                  <item>
+                   <widget class="QLabel" name="lblRTDlls">
+                    <property name="text">
+                     <string>Application DLL integrity</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRDDlls">
+                    <property name="text">
+                     <string>Pick any application folder; VeraxCore hashes its DLLs against your known-good list and flags tampered files.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowAppFolder" native="true">
+                    <layout class="QHBoxLayout" name="rowAppFolderLayout">
+                     <item>
+                      <widget class="QLineEdit" name="editAppFolder">
+                       <property name="placeholderText">
+                        <string>Path to application folder…</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRepairBrowseApp">
+                       <property name="text">
+                        <string>Browse…</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblRSDlls">
+                    <property name="text">
+                     <string>Status: not yet checked</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowDllsBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowDllsBtnsLayout">
+                     <item>
+                      <spacer name="dllsSp">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRCDlls">
+                       <property name="text">
+                        <string>Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnRFDlls">
+                       <property name="text">
+                        <string>Re-download tampered</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageSettings">
+          <layout class="QVBoxLayout" name="settingsLayout">
+           <property name="spacing">
+            <number>18</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblSettingsTitle">
+             <property name="text">
+              <string>Settings</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="settingsScroll">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="settingsScrollContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>368</width>
+                <height>526</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="settingsInnerLayout">
+               <property name="spacing">
+                <number>18</number>
+               </property>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardGeneral">
+                 <layout class="QVBoxLayout" name="cardGeneralLayout">
+                  <item>
+                   <widget class="QLabel" name="lblGeneralTitle">
+                    <property name="text">
+                     <string>General</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbStartWithWindows">
+                    <property name="text">
+                     <string>Start with Windows</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbMinimizeToTray">
+                    <property name="text">
+                     <string>Minimize to tray on close</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbShowNotifications">
+                    <property name="text">
+                     <string>Show desktop notifications</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowLanguage" native="true">
+                    <layout class="QHBoxLayout" name="rowLanguageLayout">
+                     <item>
+                      <widget class="QLabel" name="lblLanguageHeader">
+                       <property name="text">
+                        <string>Language:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="verax::FlagIcon" name="flagEn" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>32</width>
+                         <height>22</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="verax::FlagIcon" name="flagAr" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>32</width>
+                         <height>22</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboLanguage">
+                       <item>
+                        <property name="text">
+                         <string>English</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>العربية</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="langSp">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardScanning">
+                 <layout class="QVBoxLayout" name="cardScanningLayout">
+                  <item>
+                   <widget class="QLabel" name="lblScanningTitle">
+                    <property name="text">
+                     <string>Scanning</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbScanUsbOnInsert">
+                    <property name="text">
+                     <string>Offer to scan USB devices when inserted</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowSchedule" native="true">
+                    <layout class="QHBoxLayout" name="rowScheduleLayout">
+                     <item>
+                      <widget class="QLabel" name="lblScheduleHeader">
+                       <property name="text">
+                        <string>Scheduled scan:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboScheduledScan">
+                       <item>
+                        <property name="text">
+                         <string>Off</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Daily</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Weekly</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Monthly</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="lblScheduleAt">
+                       <property name="text">
+                        <string>at</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTimeEdit" name="editScheduledTime">
+                       <property name="displayFormat">
+                        <string notr="true">HH:mm</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="schedSp">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardUpdates">
+                 <layout class="QVBoxLayout" name="cardUpdatesLayout">
+                  <item>
+                   <widget class="QLabel" name="lblUpdatesTitle">
+                    <property name="text">
+                     <string>Updates</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="cbAutoUpdateSignatures">
+                    <property name="text">
+                     <string>Automatically update signatures on launch</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowUpdateUrl" native="true">
+                    <layout class="QHBoxLayout" name="rowUpdateUrlLayout">
+                     <item>
+                      <widget class="QLabel" name="lblUpdateUrlHeader">
+                       <property name="text">
+                        <string>Update URL:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="editUpdateUrl"/>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnCheckUpdatesNow">
+                       <property name="text">
+                        <string>Check now</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="verax::SurfaceCard" name="cardAdvanced">
+                 <layout class="QVBoxLayout" name="cardAdvancedLayout">
+                  <item>
+                   <widget class="QLabel" name="lblAdvancedTitle">
+                    <property name="text">
+                     <string>Advanced</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="rowAdvancedBtns" native="true">
+                    <layout class="QHBoxLayout" name="rowAdvancedBtnsLayout">
+                     <item>
+                      <widget class="QPushButton" name="btnResetSettings">
+                       <property name="text">
+                        <string>Reset all settings</string>
+                       </property>
+                       <property name="property" stdset="0">
+                        <string notr="true">danger</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnOpenLogs">
+                       <property name="text">
+                        <string>Open logs folder</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnOpenInstallDir">
+                       <property name="text">
+                        <string>Open install folder</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="advSp">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageAbout">
+          <layout class="QVBoxLayout" name="aboutLayout">
+           <property name="spacing">
+            <number>16</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <widget class="verax::SurfaceCard" name="cardAboutHero">
+             <layout class="QHBoxLayout" name="aboutHeroLayout">
+              <property name="spacing">
+               <number>20</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lblAboutLogo">
+                <property name="minimumSize">
+                 <size>
+                  <width>96</width>
+                  <height>96</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>96</width>
+                  <height>96</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../../Verax.qrc">:/assets/logo.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="aboutHeroCol" native="true">
+                <layout class="QVBoxLayout" name="aboutHeroColLayout">
+                 <property name="spacing">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblAboutTitle">
+                   <property name="text">
+                    <string>VeraxCore Antivirus</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAboutVersion">
+                   <property name="text">
+                    <string>Version 1.0.0.1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAboutVendor">
+                   <property name="text">
+                    <string>&lt;a href=&quot;https://alisakkaf.com&quot; style=&quot;color:#2563EB; text-decoration:none; font-weight:700;&quot;&gt;By Ali Sakkaf&lt;/a&gt;</string>
+                   </property>
+                   <property name="textFormat">
+                    <enum>Qt::RichText</enum>
+                   </property>
+                   <property name="openExternalLinks">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAboutDescription">
+                   <property name="text">
+                    <string>Intelligent PC integrity &amp; threat protection.</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAboutBuild">
+                   <property name="text">
+                    <string>Build information</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAboutHomepage">
+                   <property name="text">
+                    <string>https://alisakkaf.com</string>
+                   </property>
+                   <property name="openExternalLinks">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="aboutHeroSp">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="verax::SurfaceCard" name="cardAboutLinks">
+             <layout class="QVBoxLayout" name="aboutLinksLayout">
+              <item>
+               <widget class="QLabel" name="lblAboutLinksTitle">
+                <property name="text">
+                 <string>Author &amp; community</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblAboutLinksHint">
+                <property name="text">
+                 <string>Find Ali Sakkaf on the web, Facebook, and GitHub through the icons on the left sidebar.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="verax::SurfaceCard" name="cardAboutSelfTest">
+             <layout class="QVBoxLayout" name="aboutSelfTestLayout">
+              <item>
+               <widget class="QLabel" name="lblSelfTestTitle">
+                <property name="text">
+                 <string>Self-test</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblSelfTestHint">
+                <property name="text">
+                 <string>Run a controlled scan against a built-in benign test sample to confirm VeraxCore is detecting threats correctly.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="rowSelfTest" native="true">
+                <layout class="QHBoxLayout" name="rowSelfTestLayout">
+                 <item>
+                  <widget class="QPushButton" name="btnSelfTest">
+                   <property name="text">
+                    <string>Run self-test</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="stSp">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="verax::SurfaceCard" name="cardAboutCopyright">
+             <layout class="QVBoxLayout" name="aboutCopyrightLayout">
+              <item>
+               <widget class="QLabel" name="lblAboutCopyright">
+                <property name="text">
+                 <string>Copyright © 2026 Ali Sakkaf</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblAboutLicenses">
+                <property name="text">
+                 <string>This product bundles Qt (LGPL v3) and SQLite (public domain). Threat-intel signatures are sourced from public security feeds (MalwareBazaar, ThreatFox, MITRE).</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="aboutBottomSp">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageInstaller">
+          <layout class="QVBoxLayout" name="installerLayout">
+           <property name="spacing">
+            <number>16</number>
+           </property>
+           <property name="leftMargin">
+            <number>32</number>
+           </property>
+           <property name="topMargin">
+            <number>32</number>
+           </property>
+           <property name="rightMargin">
+            <number>32</number>
+           </property>
+           <property name="bottomMargin">
+            <number>32</number>
+           </property>
+           <item>
+            <widget class="verax::SurfaceCard" name="cardInstaller">
+             <layout class="QVBoxLayout" name="installerCardLayout">
+              <property name="spacing">
+               <number>14</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lblInstallerTitle">
+                <property name="text">
+                 <string>Welcome to VeraxCore Antivirus</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblInstallerSubtitle">
+                <property name="text">
+                 <string>VeraxCore Antivirus installs in a single step so it's always available from the Start Menu and runs at login.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="rowCurrentPath" native="true">
+                <layout class="QHBoxLayout" name="rowCurrentPathLayout">
+                 <item>
+                  <widget class="QLabel" name="lblCurrentPathHeader">
+                   <property name="text">
+                    <string>Currently running from:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="editCurrentPath">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="rowInstallPath" native="true">
+                <layout class="QHBoxLayout" name="rowInstallPathLayout">
+                 <item>
+                  <widget class="QLabel" name="lblInstallPathHeader">
+                   <property name="text">
+                    <string>Install to:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="editInstallPath"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnInstallBrowse">
+                   <property name="text">
+                    <string>Browse…</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cbInstallDesktop">
+                <property name="text">
+                 <string>Create desktop shortcut</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cbInstallStartMenu">
+                <property name="text">
+                 <string>Create Start Menu shortcut</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="cbInstallStartup">
+                <property name="text">
+                 <string>Start with Windows</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="rowInstallerButtons" native="true">
+                <layout class="QHBoxLayout" name="rowInstallerButtonsLayout">
+                 <item>
+                  <spacer name="instSp">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnInstallCancel">
+                   <property name="text">
+                    <string>Cancel</string>
+                   </property>
+                   <property name="property" stdset="0">
+                    <string notr="true">ghost</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnInstallNow">
+                   <property name="text">
+                    <string>Install</string>
+                   </property>
+                   <property name="property" stdset="0">
+                    <string notr="true">primary</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="installerBottomSp">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>verax::ChromeBar</class>
+   <extends>QWidget</extends>
+   <header>src/widgets/ChromeBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>verax::ProgressRing</class>
+   <extends>QWidget</extends>
+   <header>src/widgets/ProgressRing.h</header>
+  </customwidget>
+  <customwidget>
+   <class>verax::FlagIcon</class>
+   <extends>QWidget</extends>
+   <header>src/widgets/FlagIcon.h</header>
+  </customwidget>
+  <customwidget>
+   <class>verax::SurfaceCard</class>
+   <extends>QFrame</extends>
+   <header>src/widgets/SurfaceCard.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../Verax.qrc"/>
+ </resources>
+ <connections/>
+</ui>
