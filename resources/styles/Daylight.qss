@@ -1,0 +1,608 @@
+/* ═══════════════════════════════════════════════════════════════════
+   VeraxCore Antivirus — Daylight theme
+   By Ali Sakkaf • https://alisakkaf.com
+   Brand identity: Fire Dragon — warm orange / crimson / ember / gold
+   accents on a calm slate-on-white surface palette.
+   ═══════════════════════════════════════════════════════════════════ */
+
+QMainWindow, #centralWidget {
+    background-color: #FAFBFC;
+    font-family: "Segoe UI", "Tajawal", "Cairo", "Inter", sans-serif;
+    font-size: 10pt;
+    color: #0F172A;
+}
+
+QWidget {
+    font-family: "Segoe UI", "Tajawal", "Cairo", "Inter", sans-serif;
+}
+
+/* ── Custom Title Bar (ChromeBar Elements Built in UI) ── */
+#chromeBar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    min-height: 40px;
+    max-height: 40px;
+}
+
+#chromeBar QLabel {
+    color: #0F172A;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+#ChromeBarMinimize, #ChromeBarClose, #btnMinimize, #btnClose, #btnMaximize, #chromeBar QPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #475569;
+    font-size: 11pt;
+    font-weight: bold;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+#ChromeBarMinimize:hover, #btnMinimize:hover {
+    background-color: #F1F5F9;
+    color: #0F172A;
+}
+
+#ChromeBarClose:hover, #btnClose:hover {
+    background-color: #E11D48;
+    color: #FFFFFF;
+}
+
+#btnClose:hover { background-color: #E11D48; color: #FFFFFF; }
+#btnMinimize:hover, #btnMaximize:hover { background-color: #E2E8F0; }
+
+/* ── Typography ── */
+QLabel { color: #1E293B; }
+QLabel#pageTitle {
+    font-size: 24pt;
+    font-weight: 800;
+    color: #0F172A;
+    padding-bottom: 4px;
+}
+QLabel#sectionTitle {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #334155;
+    margin-top: 16px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 4px;
+}
+
+/* ── Sidebar ── */
+#sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+}
+#sidebar QPushButton {
+    background-color: transparent;
+    color: #475569;
+    text-align: left;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 11pt;
+    margin: 4px 12px;
+}
+#sidebar QPushButton:hover { background-color: #F1F5F9; color: #0F172A; }
+#sidebar QPushButton[active="true"] {
+    background-color: #EFF6FF;
+    color: #2563EB;
+    font-weight: 700;
+}
+
+/* ── Buttons ── */
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: #1E293B;
+    font-weight: 600;
+}
+QPushButton:hover { background-color: #F8FAFC; border-color: #94A3B8; }
+QPushButton:pressed { background-color: #E2E8F0; }
+
+QPushButton[property="primary"] {
+    background-color: #2563EB;
+    border: 1px solid #1D4ED8;
+    color: #FFFFFF;
+}
+QPushButton[property="primary"]:hover { background-color: #1D4ED8; border-color: #1E40AF; }
+
+QPushButton[property="danger"] {
+    background-color: #FEF2F2;
+    border: 1px solid #FECDD3;
+    color: #E11D48;
+}
+QPushButton[property="danger"]:hover { background-color: #FFE4E6; }
+
+/* ── Inputs & Combo ── */
+QLineEdit, QComboBox, QTimeEdit, QSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #0F172A;
+    font-weight: 500;
+}
+QLineEdit:focus, QComboBox:focus, QTimeEdit:focus {
+    border: 2px solid #2563EB;
+    padding: 7px 11px;
+}
+QComboBox::drop-down { border: none; background: transparent; width: 0px; }
+QComboBox::down-arrow { image: none; }
+
+/* ── Checkboxes & Radios ── */
+QCheckBox, QRadioButton { spacing: 10px; color: #334155; font-weight: 500; }
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 20px; height: 20px;
+    border-radius: 5px;
+    border: 1px solid #CBD5E1;
+    background-color: #FFFFFF;
+}
+QRadioButton::indicator { border-radius: 10px; }
+QCheckBox::indicator:hover, QRadioButton::indicator:hover { border-color: #94A3B8; }
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #2563EB; border-color: #2563EB;
+}
+
+/* ── Tables, Lists & ScrollAreas ── */
+QTableWidget, QListWidget, QScrollArea {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    alternate-background-color: #FAFBFC;
+}
+QScrollArea { border: none; background: transparent; }
+QScrollArea > QWidget > QWidget { background: transparent; }
+
+QHeaderView::section {
+    background-color: #F8FAFC;
+    border: none;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 8px 14px;
+    font-weight: 700;
+    color: #475569;
+}
+QTableWidget::item:selected, QListWidget::item:selected {
+    background-color: #EFF6FF; color: #0F172A; border: none;
+}
+
+/* ── Scrollbars ── */
+QScrollBar:vertical {
+    border: none; background: transparent;
+    width: 12px; border-radius: 6px; margin: 2px;
+}
+QScrollBar::handle:vertical {
+    background: #CBD5E1; border-radius: 4px; min-height: 30px;
+}
+QScrollBar::handle:vertical:hover { background: #94A3B8; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { border: none; background: none; }
+
+/* ── Cards & Toasters ── */
+.SurfaceCard {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+}
+
+#Toaster {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+#Toaster[kind="success"] { border-left: 5px solid #10B981; }
+#Toaster[kind="warn"]    { border-left: 5px solid #F59E0B; }
+#Toaster[kind="error"]   { border-left: 5px solid #E11D48; }
+#Toaster[kind="info"]    { border-left: 5px solid #2563EB; }
+#ToasterText { color: #0F172A; font-size: 10pt; font-weight: 600; }
+
+QLabel[status="ok"]      { color: #059669; font-weight: 700; }
+QLabel[status="missing"] { color: #D97706; font-weight: 700; }
+QLabel[status="bad"]     { color: #E11D48; font-weight: 700; }
+QLabel[status="unknown"] { color: #64748B; font-weight: 600; }
+
+QProgressBar {
+    background-color: #E2E8F0; border: none; border-radius: 8px;
+    text-align: center; color: #FFFFFF; font-weight: bold;
+}
+QProgressBar::chunk { background-color: #2563EB; border-radius: 8px; }
+
+/* ════════════════════════════════════════════════════════════════════
+   ThreatCard — overrides the generic "QScrollArea > QWidget > QWidget
+   { background: transparent; }" rule by using a higher-specificity
+   id selector. Without this block the card content is rendered but
+   the surface is invisible against the page background.
+   ════════════════════════════════════════════════════════════════════ */
+QScrollArea > QWidget > #ThreatCard,
+#ThreatCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 4px;
+}
+
+#ThreatCardName {
+    color: #0F172A;
+    font-size: 12pt;
+    font-weight: 800;
+    padding: 2px 0;
+}
+#ThreatCardPath {
+    color: #475569;
+    font-size: 9pt;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+#ThreatCardReason {
+    color: #334155;
+    font-size: 9pt;
+    padding: 2px 0;
+}
+#ThreatCardHash,
+#ThreatCardSize {
+    color: #64748B;
+    font-size: 9pt;
+    padding: 0 4px;
+}
+
+/* ── Chip system ────────────────────────────────────────────────── */
+QLabel[class="Chip"] {
+    border-radius: 10px;
+    padding: 2px 10px;
+    font-weight: 700;
+    font-size: 8pt;
+    qproperty-alignment: AlignCenter;
+    min-height: 20px;
+}
+
+#ThreatFamily {
+    background-color: #E0F2FE;
+    color: #0369A1;
+    border: 1px solid #BAE6FD;
+}
+#ThreatScore {
+    background-color: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+}
+
+#ThreatSeverity[kind="high"] {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    border: 1px solid #FECACA;
+}
+#ThreatSeverity[kind="medium"] {
+    background-color: #FEF3C7;
+    color: #B45309;
+    border: 1px solid #FDE68A;
+}
+#ThreatSeverity[kind="low"] {
+    background-color: #DCFCE7;
+    color: #15803D;
+    border: 1px solid #BBF7D0;
+}
+
+#ThreatActionTag {
+    background-color: #EDE9FE;
+    color: #6D28D9;
+    border: 1px solid #DDD6FE;
+}
+
+/* ── ThreatCard buttons ── */
+#ThreatCard QPushButton[kind="primary"] {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: 1px solid #1D4ED8;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+#ThreatCard QPushButton[kind="primary"]:hover { background-color: #1D4ED8; }
+#ThreatCard QPushButton[kind="primary"]:disabled {
+    background-color: #93C5FD; border-color: #93C5FD; color: #EFF6FF;
+}
+
+#ThreatCard QPushButton[kind="danger"] {
+    background-color: #FEF2F2;
+    color: #B91C1C;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+#ThreatCard QPushButton[kind="danger"]:hover { background-color: #FFE4E6; }
+#ThreatCard QPushButton[kind="danger"]:disabled {
+    background-color: #FECACA; color: #FEE2E2;
+}
+
+#ThreatCard QPushButton[kind="secondary"] {
+    background-color: #F1F5F9;
+    color: #1E293B;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+#ThreatCard QPushButton[kind="secondary"]:hover { background-color: #E2E8F0; }
+#ThreatCard QPushButton[kind="secondary"]:disabled {
+    background-color: #F8FAFC; color: #CBD5E1;
+}
+
+#ThreatCard QPushButton[kind="ghost"] {
+    background-color: transparent;
+    color: #475569;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 600;
+}
+#ThreatCard QPushButton[kind="ghost"]:hover {
+    background-color: #F1F5F9; color: #0F172A;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   ScanOptionsDialog — modal popup for Quick / Full / Custom Scan
+   ════════════════════════════════════════════════════════════════════ */
+#ScanOptionsDialog {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+}
+
+#ScanOptionsTitle {
+    color: #0F172A;
+    font-size: 18pt;
+    font-weight: 800;
+    padding-bottom: 4px;
+}
+#ScanOptionsSubtitle {
+    color: #475569;
+    font-size: 10pt;
+}
+
+#ScanOptionsDialog QGroupBox {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    margin-top: 14px;
+    padding: 18px 12px 10px 12px;
+    font-weight: 700;
+    color: #0F172A;
+}
+#ScanOptionsDialog QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 14px;
+    padding: 0 6px;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-size: 10pt;
+}
+
+#ScanOptionsDialog QListWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#ScanOptionsDialog QPushButton[kind="primary"] {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: 1px solid #1D4ED8;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 700;
+}
+#ScanOptionsDialog QPushButton[kind="primary"]:hover { background-color: #1D4ED8; }
+
+#ScanOptionsDialog QPushButton[kind="ghost"] {
+    background-color: transparent;
+    color: #475569;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+#ScanOptionsDialog QPushButton[kind="ghost"]:hover {
+    background-color: #F1F5F9; color: #0F172A;
+}
+
+#ScanOptionsDialog QPushButton[kind="danger"] {
+    background-color: #FEF2F2;
+    color: #B91C1C;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 700;
+}
+#ScanOptionsDialog QPushButton[kind="danger"]:hover { background-color: #FFE4E6; }
+
+/* ════════════════════════════════════════════════════════════════════
+   UpdaterDialog — silent on-startup version-check modal.
+   Refined Cyan & Blue palette (Zero dark/black components).
+   By Ali Sakkaf • https://alisakkaf.com
+   ════════════════════════════════════════════════════════════════════ */
+#UpdaterDialog {
+    background-color: #FFFFFF;
+    /* Removed the dark border, replaced with a vivid Cyan contour */
+    border: 3px solid #00A3E0;
+    border-radius: 18px;
+}
+#UpdaterDialog QLabel { color: #0F172A; }
+
+/* Top badge / vector icon container */
+#UpdaterBadge {
+    background-color: #E0F2FE;
+    color: #0284C7;
+    border: 1px solid #0EA5E9;
+    border-radius: 24px;
+    font-size: 22pt;
+    font-weight: 800;
+}
+
+#UpdaterTitle {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #0F172A;
+}
+#UpdaterSubtitle {
+    font-size: 10pt;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Available version chip (New Release) */
+#UpdaterChipNew {
+    background-color: #E0F7FA;
+    color: #00838F;
+    border: 1px solid #00ACC1;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-weight: 800;
+    font-size: 10pt;
+}
+/* User's running version chip (Current Installed) */
+#UpdaterChipOld {
+    background-color: #F1F5F9;
+    color: #475569;
+    border: 1px solid #CBD5E1;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+#UpdaterChangelogTitle {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0F172A;
+    margin-top: 4px;
+}
+#UpdaterChangelog {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #1E293B;
+    font-size: 10pt;
+}
+
+/* ─── Interaction Buttons ─────────────────────────────────────────── */
+
+/* Primary Action: Replaced black/dark navy with a bold, professional Blue/Cyan accent */
+#UpdaterDialog QPushButton[kind="primary"] {
+    background-color: #0284C7;
+    color: #FFFFFF;
+    border: 1.5px solid #00A3E0;
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-weight: 800;
+}
+/* Primary Action Hover: Illuminates into a highly visible, pure Cyan */
+#UpdaterDialog QPushButton[kind="primary"]:hover {
+    background-color: #00A3E0;
+    border-color: #00B4D8;
+    color: #FFFFFF;
+}
+
+/* Secondary Action: "Skip" and "Remind Me" layout */
+#UpdaterDialog QPushButton[kind="ghost"] {
+    background-color: transparent;
+    color: #0284C7;
+    border: 1px solid #0EA5E9;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: 600;
+}
+#UpdaterDialog QPushButton[kind="ghost"]:hover {
+    background-color: #F0F9FF;
+    color: #0369A1;
+    border-color: #0284C7;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   Signature-database info card (cardSignatures + lblSignaturesInfo)
+   ════════════════════════════════════════════════════════════════════ */
+#cardSignatures {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 6px;
+}
+#cardSignatures #lblSignaturesHeader {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0F172A;
+}
+#cardQuarantine #lblQuarantineHeader {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0F172A;
+}
+#cardLastScan #lblLastScanHeader {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0F172A;
+}
+#lblSignaturesInfo {
+    color: #1E293B;
+    font-size: 9pt;
+    padding: 2px 0;
+    line-height: 150%;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   About-page hero — new branded SVG logo gets a soft warm backdrop.
+   ════════════════════════════════════════════════════════════════════ */
+#cardAboutHero {
+    background-color: #FFFFFF;
+    border: 3px solid #edfbff;
+    border-radius: 16px;
+    padding: 8px;
+}
+#lblAboutLogo {
+    background-color: #edfbff;
+    border: 1px solid #04bfb5;
+    border-radius: 16px;
+    padding: 6px;
+}
+#lblAboutTitle {
+    font-size: 18pt;
+    font-weight: 900;
+    color: #0F172A;
+}
+#lblAboutVersion {
+    color: #475569;
+    font-weight: 600;
+}
+#lblAboutVendor {
+    font-size: 10pt;
+}
+#lblAboutDescription {
+    color: #334155;
+    font-weight: 500;
+}
+#lblAboutBuild {
+    color: #64748B;
+    font-size: 9pt;
+}
+#lblAboutHomepage {
+    color: #FF7A1A;
+    font-weight: 700;
+}
+
+/* ── App-name label in the sidebar header ── */
+#lblAppNameVersion {
+    color: #4795b5;
+    font-size: 9pt;
+    font-weight: 900;
+    padding: 4px 4px 8px 4px;
+}
