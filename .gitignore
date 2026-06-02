@@ -1,0 +1,87 @@
+# Build output
+build/
+release/
+debug/
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.idb
+moc_*
+ui_*
+qrc_*
+object_script.*
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+*.qmlc
+*.jsc
+Makefile*
+.qmake.stash
+.qtc_clangd/
+.qtcreator/
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.*
+*.sln
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+*.opendb
+ipch/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Archives
+*.rar
+*.zip
+*.7z
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+
+# User data (runtime generated)
+UserData/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Qt translation compiled
+*.qm
+
+# Implementation plans (dev notes)
+implementation_plan.md
+
+# Dump scripts (dev tools)
+Dump-Infected-PE.ps1
+
+# Released builds
+RELEASED/
+
+# Qt runtime config
+qt.conf
+
+# Gemini AI workspace
+.gemini/
