@@ -104,27 +104,66 @@ VeraxCore مصمم للعمل عبر نطاق واسع من إصدارات Windo
 | **الإنترنت** | غير مطلوب | اختياري (للتحديثات) |
 
 ---
-
 ## 📸 لقطات الشاشة
 
+### 🛡️ واجهة فيراكس شيلد (الشعار والهوية)
+
 <p align="center">
-  <em>سيتم إضافة لقطات الشاشة هنا</em>
+  <a href="https://ibb.co/mV8TCNQc">
+    <kbd>
+      <img src="https://i.ibb.co/Xr8LZYmC/Verax-Shield.jpg" alt="Verax-Shield" width="800">
+    </kbd>
+  </a>
 </p>
 
-<!-- أضف لقطات الشاشة هكذا:
-<p align="center">
-  <img src="docs/screenshots/main_dashboard.png" alt="لوحة التحكم الرئيسية" width="700"/>
-</p>
-<p align="center">
-  <img src="docs/screenshots/scan_results.png" alt="نتائج الفحص" width="700"/>
-</p>
-<p align="center">
-  <img src="docs/screenshots/quarantine.png" alt="خزنة الحجر" width="700"/>
-</p>
-<p align="center">
-  <img src="docs/screenshots/settings.png" alt="الإعدادات" width="700"/>
-</p>
--->
+---
+
+### 🖥️ لقطات شاشة التطبيق
+
+<table align="center" dir="rtl">
+  <tr>
+    <td align="center">
+      <strong>2. لوحة التحكم الرئيسية</strong><br/>
+      <a href="https://ibb.co/DHRDFkdk">
+        <kbd><img src="https://i.ibb.co/ycQnC525/Dashboard.png" alt="Dashboard" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>3. واجهة وجاري فحص الملفات</strong><br/>
+      <a href="https://ibb.co/7dLTkwQZ">
+        <kbd><img src="https://i.ibb.co/LXHqNLrc/scanning-ui.png" alt="scanning-ui" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>4. خيارات الفحص ودعم اللغات</strong><br/>
+      <a href="https://ibb.co/b5d0G05b">
+        <kbd><img src="https://i.ibb.co/3mh3P3mR/scan-ui-and-languages-support.png" alt="scan-ui" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>5. خزنة الحجر الصحي المشفرة</strong><br/>
+      <a href="https://ibb.co/HTnZhpyv">
+        <kbd><img src="https://i.ibb.co/5hBZKx3D/Quarantine-UI.png" alt="Quarantine-UI" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>6. إعدادات المكافح المتقدمة</strong><br/>
+      <a href="https://ibb.co/dsrY0Ncx">
+        <kbd><img src="https://i.ibb.co/V0t4WFN5/Settings-UI.png" alt="Settings-UI" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>7. واجهة تثبيت البرنامج وتحديثه</strong><br/>
+      <a href="https://ibb.co/HD142zXF">
+        <kbd><img src="https://i.ibb.co/bgqm3B7W/Installation-UI.png" alt="Installation-UI" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
