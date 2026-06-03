@@ -110,55 +110,64 @@ VeraxCore is designed to work across a wide range of Windows versions and archit
 
 ## 📸 Screenshots
 
+### 🛡️ Verax Shield (Branding)
+
 <p align="center">
-  <em>Screenshots will be added here — place your images in <code>docs/screenshots/</code></em>
+  <a href="https://ibb.co/mV8TCNQc">
+    <kbd>
+      <img src="https://i.ibb.co/Xr8LZYmC/Verax-Shield.jpg" alt="Verax-Shield" width="800">
+    </kbd>
+  </a>
 </p>
 
-<!-- 
-INSTRUCTIONS: Add your screenshots by replacing the comments below:
+---
 
-### Main Dashboard
-<p align="center">
-  <img src="docs/screenshots/main_dashboard.png" alt="Main Dashboard" width="750"/>
-  <br/><em>The main dashboard showing system protection status, last scan info, and quick actions</em>
-</p>
+### 🖥️ Application Interface
 
-### Scan in Progress
-<p align="center">
-  <img src="docs/screenshots/scanning.png" alt="Scanning" width="750"/>
-  <br/><em>Real-time scanning with file progress, threat count, and speed metrics</em>
-</p>
-
-### Threat Detection
-<p align="center">
-  <img src="docs/screenshots/threat_detected.png" alt="Threat Detected" width="750"/>
-  <br/><em>Detailed threat information with Clean, Quarantine, and Delete options</em>
-</p>
-
-### Scan Results
-<p align="center">
-  <img src="docs/screenshots/scan_results.png" alt="Scan Results" width="750"/>
-  <br/><em>Complete scan report with threat details, file paths, and severity levels</em>
-</p>
-
-### Quarantine Vault
-<p align="center">
-  <img src="docs/screenshots/quarantine.png" alt="Quarantine Vault" width="750"/>
-  <br/><em>AES-256 encrypted quarantine vault with restore and delete options</em>
-</p>
-
-### Settings
-<p align="center">
-  <img src="docs/screenshots/settings.png" alt="Settings" width="750"/>
-  <br/><em>Comprehensive settings: scan options, engine toggles, schedule, and more</em>
-</p>
-
-### Dark Theme
-<p align="center">
-  <img src="docs/screenshots/dark_theme.png" alt="Dark Theme" width="750"/>
-  <br/><em>Modern glassmorphism dark theme for comfortable nighttime use</em>
-</p>
--->
+<table align="center">
+  <tr>
+    <td align="center">
+      <strong>2. Main Dashboard</strong><br/>
+      <a href="https://ibb.co/DHRDFkdk">
+        <kbd><img src="https://i.ibb.co/ycQnC525/Dashboard.png" alt="Dashboard" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>3. Scanning Progress</strong><br/>
+      <a href="https://ibb.co/7dLTkwQZ">
+        <kbd><img src="https://i.ibb.co/LXHqNLrc/scanning-ui.png" alt="scanning-ui" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>4. Scan Options & Language</strong><br/>
+      <a href="https://ibb.co/b5d0G05b">
+        <kbd><img src="https://i.ibb.co/3mh3P3mR/scan-ui-and-languages-support.png" alt="scan-ui" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>5. Quarantine Vault</strong><br/>
+      <a href="https://ibb.co/HTnZhpyv">
+        <kbd><img src="https://i.ibb.co/5hBZKx3D/Quarantine-UI.png" alt="Quarantine-UI" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>6. Settings Interface</strong><br/>
+      <a href="https://ibb.co/dsrY0Ncx">
+        <kbd><img src="https://i.ibb.co/V0t4WFN5/Settings-UI.png" alt="Settings-UI" width="400"></kbd>
+      </a>
+    </td>
+    <td align="center">
+      <strong>7. Installation Setup</strong><br/>
+      <a href="https://ibb.co/HD142zXF">
+        <kbd><img src="https://i.ibb.co/bgqm3B7W/Installation-UI.png" alt="Installation-UI" width="400"></kbd>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
