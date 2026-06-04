@@ -25,6 +25,11 @@
 #include "../widgets/SurfaceCard.h"
 #include "../utils/FileOps.h"
 
+#ifdef Q_OS_WIN
+#include <windows.h>
+#include <windowsx.h>
+#endif
+
 #include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -290,6 +295,10 @@ void MainWindow::wireUi()
 void MainWindow::wireSignals()
 {
     connect(ui->chromeBar, &ChromeBar::minimizeClicked, this, &MainWindow::showMinimized);
+    connect(ui->chromeBar, &ChromeBar::maximizeClicked, this, [this]() {
+        if (isMaximized()) showNormal();
+        else showMaximized();
+    });
     connect(ui->chromeBar, &ChromeBar::closeClicked,    this, &MainWindow::close);
 
     const QList<QPushButton*> navButtons = ui->sidebar->findChildren<QPushButton*>();
@@ -419,6 +428,10 @@ void MainWindow::changeEvent(QEvent *e)
     if (e->type() == QEvent::LanguageChange) {
         ui->retranslateUi(this);
         retranslateRuntime();
+    } else if (e->type() == QEvent::WindowStateChange) {
+        if (ui->chromeBar) {
+            ui->chromeBar->updateMaximizeIcon(isMaximized());
+        }
     }
     QMainWindow::changeEvent(e);
 }
@@ -1814,6 +1827,56 @@ void MainWindow::onBulkAction()
     // Reset combo
     m_bulkActionCombo->setCurrentIndex(0);
     if (m_selectAll) m_selectAll->setChecked(false);
+}
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+bool MainWindow::nativeEvent(const QByteArray &eventType, void *message, qintptr *result)
+#else
+bool MainWindow::nativeEvent(const QByteArray &eventType, void *message, long *result)
+#endif
+{
+#ifdef Q_OS_WIN
+    MSG *msg = static_cast<MSG *>(message);
+    if (msg->message == WM_NCHITTEST) {
+        int x = GET_X_LPARAM(msg->lParam);
+        int y = GET_Y_LPARAM(msg->lParam);
+        QPoint pos = mapFromGlobal(QPoint(x, y));
+
+        int border = 8;
+
+        bool left = pos.x() < border;
+        bool right = pos.x() > width() - border;
+        bool top = pos.y() < border;
+        bool bottom = pos.y() > height() - border;
+
+        if (left && top) {
+            *result = HTTOPLEFT;
+            return true;
+        } else if (left && bottom) {
+            *result = HTBOTTOMLEFT;
+            return true;
+        } else if (right && top) {
+            *result = HTTOPRIGHT;
+            return true;
+        } else if (right && bottom) {
+            *result = HTBOTTOMRIGHT;
+            return true;
+        } else if (left) {
+            *result = HTLEFT;
+            return true;
+        } else if (right) {
+            *result = HTRIGHT;
+            return true;
+        } else if (top) {
+            *result = HTTOP;
+            return true;
+        } else if (bottom) {
+            *result = HTBOTTOM;
+            return true;
+        }
+    }
+#endif
+    return QMainWindow::nativeEvent(eventType, message, result);
 }
 
 } // namespace verax

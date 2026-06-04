@@ -4,7 +4,7 @@ REM By Ali Sakkaf - https://alisakkaf.com
 REM This batch file is for the USER to run manually. The agent never runs it.
 setlocal
 
-set QT_STATIC=C:\Qt\Full_Ultimate_Static_5.14.2\5.14.2\bin
+set QT_STATIC=C:\Qt\Static_5.14.2\5.14.2\bin
 set MINGW=C:\Qt\Qt5.14.1\Tools\mingw730_32\bin
 set PATH=%QT_STATIC%;%MINGW%;%PATH%
 
@@ -15,8 +15,8 @@ if exist .qrc  rmdir /s /q .qrc  >nul 2>&1
 if exist .ui   rmdir /s /q .ui   >nul 2>&1
 
 echo [1/4] Generating translations...
-if exist i18n\verax_ar.ts lrelease i18n\verax_ar.ts -qm i18n\verax_ar.qm
-if exist i18n\verax_en.ts lrelease i18n\verax_en.ts -qm i18n\verax_en.qm
+if exist i18n\verax_ar.ts lrelease.exe i18n\verax_ar.ts -qm i18n\verax_ar.qm
+if exist i18n\verax_en.ts lrelease.exe i18n\verax_en.ts -qm i18n\verax_en.qm
 
 echo [2/4] Running qmake...
 qmake Verax.pro -spec win32-g++ "CONFIG+=release" || goto :error
