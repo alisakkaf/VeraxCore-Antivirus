@@ -1,4 +1,4 @@
-// ChromeBar.h - frameless drag bar with title + min/close (no maximize)
+// ChromeBar.h - frameless drag bar with title + min/max/close
 // By Ali Sakkaf - https://alisakkaf.com
 #pragma once
 #include <QWidget>
@@ -15,9 +15,11 @@ public:
     void setTitle(const QString &t);
     void setStatusText(const QString &s);
     void setStatusKind(const QString &kind); // idle|scanning|threat
+    void updateMaximizeIcon(bool isMaximized);
 
 signals:
     void minimizeClicked();
+    void maximizeClicked();
     void closeClicked();
 
 protected:
@@ -31,6 +33,7 @@ private:
     QLabel       *m_title     = nullptr;
     QLabel       *m_status    = nullptr;
     QPushButton  *m_btnMin    = nullptr;
+    QPushButton  *m_btnMax    = nullptr;
     QPushButton  *m_btnClose  = nullptr;
 
     QPoint        m_dragOrigin;
