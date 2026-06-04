@@ -25,7 +25,9 @@
 
 <p align="center">
   <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/releases"><img src="https://img.shields.io/github/downloads/alisakkaf/VeraxCore-Antivirus/total?style=for-the-badge&logo=github&label=Downloads&color=22C55E" alt="Downloads"/></a>
-  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/stargazers"><img src="https://img.shields.io/github/stars/alisakkaf/VeraxCore-Antivirus?style=for-the-badge&logo=github&label=Stars&color=F59E0B" alt="Stars"/></a>
+<a href="https://github.com/alisakkaf/VeraxCore-Antivirus/stargazers">
+  <img src="https://img.shields.io/github/stars/alisakkaf/VeraxCore-Antivirus.svg?style=for-the-badge&logo=github&label=Stars&color=FFD700" alt="VeraxCore Stars"/>
+</a>
   <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/issues"><img src="https://img.shields.io/github/issues/alisakkaf/VeraxCore-Antivirus?style=for-the-badge&logo=github&label=Issues&color=6366F1" alt="Issues"/></a>
   <a href="README.ar.md"><img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-README-F97316?style=for-the-badge&logo=googletranslate&logoColor=white" alt="Arabic"/></a>
 </p>
