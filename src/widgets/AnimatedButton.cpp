@@ -5,6 +5,7 @@
 #include <QPropertyAnimation>
 #include <QEvent>
 #include <QFontMetrics>
+#include "../core/Settings.h"
 
 namespace verax {
 
@@ -22,7 +23,9 @@ void AnimatedButton::init()
     m_shadow->setBlurRadius(6);
     m_shadow->setOffset(0, 1);
     m_shadow->setColor(QColor(15, 23, 42, 20));
-    setGraphicsEffect(m_shadow);
+    if (verax::Settings::instance().language() != "ar") {
+        setGraphicsEffect(m_shadow);
+    }
 
     // Font-metric driven minimum size
     QFontMetrics fm(font());

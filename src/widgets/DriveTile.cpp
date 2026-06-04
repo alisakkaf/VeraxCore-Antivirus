@@ -1,6 +1,7 @@
 // DriveTile.cpp
 #include "DriveTile.h"
 #include "../utils/FileOps.h"
+#include "../core/Settings.h"
 
 #include <QLabel>
 #include <QCheckBox>
@@ -8,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QCoreApplication>
+#include "src/core/Settings.h"
 
 #ifdef _WIN32
 #  include <windows.h>
@@ -70,7 +72,9 @@ DriveTile::DriveTile(const DriveInfo &d, QWidget *parent)
     m_lblLetter = new QLabel(letterText, this);
     m_lblLetter->setObjectName("DriveTileLetter");
     QFont nameFont = m_lblLetter->font();
-    nameFont.setBold(true);
+    if (verax::Settings::instance().language() != "ar") {
+        nameFont.setBold(true);
+    }
     m_lblLetter->setFont(nameFont);
 
     const QByteArray typeKey = d.typeName.toUtf8();

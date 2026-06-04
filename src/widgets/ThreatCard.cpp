@@ -13,6 +13,7 @@
 #include <QFileInfo>
 #include <QStyle>
 #include <QSet>
+#include "../core/Settings.h"
 
 namespace verax {
 
@@ -53,7 +54,9 @@ ThreatCard::ThreatCard(const ThreatInfo &info, QWidget *parent)
     m_lblName->setText(info.detectionName.isEmpty()
                        ? tr("Suspicious file") : info.detectionName);
     QFont nameFont = m_lblName->font();
-    nameFont.setBold(true);
+    if (verax::Settings::instance().language() != "ar") {
+        nameFont.setBold(true);
+    }
     m_lblName->setFont(nameFont);
 
     m_lblFamily = makeChip(this,

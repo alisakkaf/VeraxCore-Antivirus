@@ -6,6 +6,7 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 #include <QGraphicsDropShadowEffect>
+#include "../core/Settings.h"
 
 namespace verax {
 
@@ -45,7 +46,9 @@ Toaster::Toaster(QWidget *anchor, const QString &text, Kind k)
     shadow->setBlurRadius(20);
     shadow->setColor(QColor(15, 23, 42, 60));
     shadow->setOffset(0, 6);
-    setGraphicsEffect(shadow);
+    if (verax::Settings::instance().language() != "ar") {
+        setGraphicsEffect(shadow);
+    }
 
     adjustSize();
     setFixedWidth(qMin(360, anchor->width() - pad * 2));

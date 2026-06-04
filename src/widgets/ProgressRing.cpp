@@ -1,6 +1,7 @@
 #include "ProgressRing.h"
 #include <QPainter>
 #include <QPropertyAnimation>
+#include "../core/Settings.h"
 
 namespace verax {
 
@@ -60,7 +61,9 @@ void ProgressRing::paintEvent(QPaintEvent *)
 
     QFont f = font();
     f.setPointSizeF(f.pointSizeF() * 1.8);
-    f.setBold(true);
+    if (verax::Settings::instance().language() != "ar") {
+        f.setBold(true);
+    }
     p.setFont(f);
     p.setPen(QColor("#0F172A"));
 

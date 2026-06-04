@@ -56,7 +56,6 @@ void FlagIcon::paintAr(QPainter &p, const QRectF &r)
     p.fillRect(r, QColor("#006C35"));
     QFont f = p.font();
     f.setPointSizeF(r.height() * 0.42);
-    f.setBold(true);
     p.setFont(f);
     p.setPen(QColor("#FFFFFF"));
     p.drawText(r, Qt::AlignCenter, QStringLiteral("\u0627\u0644\u0639\u0631\u0628\u064A\u0629"));

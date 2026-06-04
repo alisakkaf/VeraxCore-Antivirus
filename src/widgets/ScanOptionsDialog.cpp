@@ -6,6 +6,7 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QSpinBox>
+#include "../core/Settings.h"
 #include <QLabel>
 #include <QPushButton>
 #include <QHBoxLayout>
@@ -45,7 +46,11 @@ void ScanOptionsDialog::buildUi()
     m_title->setObjectName("ScanOptionsTitle");
     QFont tf = m_title->font();
     tf.setPointSizeF(tf.pointSizeF() * 1.45);
-    tf.setBold(true);
+    if (verax::Settings::instance().language() != "ar") {
+        tf.setBold(true);
+        m_title->setStyleSheet("font-weight: normal;");
+        m_title->setStyleSheet("font-weight: normal;");
+    }
     m_title->setFont(tf);
 
     m_subtitle = new QLabel(this);
@@ -207,7 +212,7 @@ void ScanOptionsDialog::retranslate()
     case Quick:
         setWindowTitle(tr("Quick Scan — Verax"));
         m_title   ->setText(tr("Quick Scan"));
-        m_subtitle->setText(tr("Sweeps the standard malware drop and persistence "
+        m_subtitle->setText(QStringLiteral("<html>") + tr("Sweeps the standard malware drop and persistence "
                                "locations: Temp, Downloads, AppData, ProgramData "
                                "and the Startup folders. Adjust the scope or "
                                "engines below before starting."));
@@ -215,14 +220,14 @@ void ScanOptionsDialog::retranslate()
     case Full:
         setWindowTitle(tr("Full Scan — Verax"));
         m_title   ->setText(tr("Full System Scan"));
-        m_subtitle->setText(tr("Visits every fixed drive on this machine. "
+        m_subtitle->setText(QStringLiteral("<html>") + tr("Visits every fixed drive on this machine. "
                                "This can take a long time — keep the engines "
                                "you actually need enabled."));
         break;
     case Custom:
         setWindowTitle(tr("Custom Scan — Verax"));
         m_title   ->setText(tr("Custom Scan"));
-        m_subtitle->setText(tr("Pick exactly what to scan, which engines to "
+        m_subtitle->setText(QStringLiteral("<html>") + tr("Pick exactly what to scan, which engines to "
                                "use, and what to do when something is found."));
         break;
     }

@@ -6,6 +6,8 @@
 #include <QStyle>
 #include <QVariant>
 
+#include "src/core/Settings.h"
+
 namespace verax {
 
 SurfaceCard::SurfaceCard(QWidget *parent) : QFrame(parent)
@@ -15,11 +17,13 @@ SurfaceCard::SurfaceCard(QWidget *parent) : QFrame(parent)
     setFrameShape(QFrame::NoFrame);
     setAttribute(Qt::WA_StyledBackground, true);
 
-    auto *shadow = new QGraphicsDropShadowEffect(this);
-    shadow->setBlurRadius(12);
-    shadow->setOffset(0, 2);
-    shadow->setColor(QColor(15, 23, 42, 18));
-    setGraphicsEffect(shadow);
+    if (verax::Settings::instance().language() != "ar") {
+        auto *shadow = new QGraphicsDropShadowEffect(this);
+        shadow->setBlurRadius(12);
+        shadow->setOffset(0, 2);
+        shadow->setColor(QColor(15, 23, 42, 18));
+        setGraphicsEffect(shadow);
+    }
 }
 
 void SurfaceCard::setInteractive(bool v)
