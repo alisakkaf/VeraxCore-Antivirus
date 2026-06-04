@@ -24,12 +24,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/releases"><img src="https://img.shields.io/github/downloads/alisakkaf/VeraxCore-Antivirus/total?style=for-the-badge&logo=github&label=Downloads&color=22C55E" alt="Downloads"/></a>
-<a href="https://github.com/alisakkaf/VeraxCore-Antivirus/stargazers">
-  <img src="https://img.shields.io/github/stars/alisakkaf/VeraxCore-Antivirus.svg?style=for-the-badge&logo=github&label=Stars&color=FFD700" alt="VeraxCore Stars"/>
-</a>
-  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/issues"><img src="https://img.shields.io/github/issues/alisakkaf/VeraxCore-Antivirus?style=for-the-badge&logo=github&label=Issues&color=6366F1" alt="Issues"/></a>
-  <a href="README.md"><img src="https://img.shields.io/badge/English-README-F97316?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English"/></a>
+  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/releases">
+    <img src="https://img.shields.io/github/downloads/alisakkaf/VeraxCore-Antivirus/total.svg?style=for-the-badge&logo=github&label=Downloads&color=22C55E" alt="Downloads"/>
+  </a>
+  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/stargazers">
+    <img src="https://img.shields.io/github/stars/alisakkaf/VeraxCore-Antivirus.svg?style=for-the-badge&logo=github&label=Stars&color=FFD700" alt="Stars"/>
+  </a>
+  <a href="https://github.com/alisakkaf/VeraxCore-Antivirus/issues">
+    <img src="https://img.shields.io/github/issues/alisakkaf/VeraxCore-Antivirus.svg?style=for-the-badge&logo=github&label=Issues&color=6366F1" alt="Issues"/>
+  </a>
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/English-README-F97316.svg?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English"/>
+  </a>
 </p>
 
 <p align="center">
