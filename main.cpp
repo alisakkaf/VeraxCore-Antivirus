@@ -16,15 +16,26 @@
 #include <QFile>
 #include <QFontDatabase>
 #include <QDir>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QRegularExpression>
+
+#ifdef Q_OS_WIN
+#include <windows.h>
+#include <tlhelp32.h>
+#endif
 
 int main(int argc, char *argv[])
 {
     // 1) HARDEN FIRST - before any other init. Kills DLL planting.
     shield::harden();
 
-    // 2) High-DPI before QApplication for crisp rendering
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-    QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    // Disable High DPI Scaling globally
+    qputenv("QT_ENABLE_HIGHDPI_SCALING", "0");
+    qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "0");
+
+    // Force Windows to treat the application as DPI Unaware
+    qputenv("QT_QPA_PLATFORM", "windows:dpiawareness=0");
 
     QApplication a(argc, argv);
 
@@ -81,6 +92,12 @@ int main(int argc, char *argv[])
                     QString::fromLatin1(APP_NAME));
         css.replace(QStringLiteral("%APP_VERSION%"),
                     QString::fromLatin1(APP_VERSION_STR));
+        if (verax::Settings::instance().language() == "ar") {
+            // Strip font-weight rules to prevent Qt's synthetic bolding
+            // bug which breaks Arabic text shaping.
+            QRegularExpression re("font-weight:\\s*[a-zA-Z0-9]+\\s*;?");
+            css.replace(re, "");
+        }
         a.setStyleSheet(css);
     }
 
@@ -96,6 +113,65 @@ int main(int argc, char *argv[])
     parser.addOption(optScan);
     parser.addOption(optTray);
     parser.process(a);
+
+#ifdef Q_OS_WIN
+    // 7.5) Single Instance check
+    HANDLE hMutex = CreateMutexA(NULL, FALSE, "VeraxCore_SingleInstance_Mutex");
+    if (GetLastError() == ERROR_ALREADY_EXISTS) {
+        // Bring existing window to front
+        HWND hWnd = FindWindowA(NULL, APP_NAME);
+        if (hWnd) {
+            ShowWindow(hWnd, SW_RESTORE);
+            SetForegroundWindow(hWnd);
+        }
+
+        // Show elegant dialog
+        QMessageBox msgBox;
+        msgBox.setIconPixmap(QPixmap(":/assets/logo.png").scaled(64, 64, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        msgBox.setWindowTitle(QString::fromLatin1(APP_NAME));
+        
+        bool isAr = (verax::Settings::instance().language() == "ar");
+        if (isAr) {
+            msgBox.setLayoutDirection(Qt::RightToLeft);
+            msgBox.setText(QString::fromUtf8("البرنامج قيد التشغيل بالفعل.\nهل تريد إغلاق النسخة الحالية وإعادة فتح البرنامج؟"));
+            msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+            msgBox.setButtonText(QMessageBox::Yes, QString::fromUtf8("نعم، أعد الفتح"));
+            msgBox.setButtonText(QMessageBox::No, QString::fromUtf8("لا، تراجع"));
+        } else {
+            msgBox.setText(QString::fromLatin1("The program is already running.\nDo you want to close the existing instance and reopen it?"));
+            msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        }
+        msgBox.setDefaultButton(QMessageBox::No);
+
+        if (msgBox.exec() == QMessageBox::Yes) {
+            // Kill existing instances
+            DWORD myPid = GetCurrentProcessId();
+            HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+            if (hSnap != INVALID_HANDLE_VALUE) {
+                PROCESSENTRY32W pe32;
+                pe32.dwSize = sizeof(PROCESSENTRY32W);
+                if (Process32FirstW(hSnap, &pe32)) {
+                    do {
+                        if (pe32.th32ProcessID != myPid) {
+                            QString exeName = QString::fromWCharArray(pe32.szExeFile);
+                            if (exeName.compare(QString::fromLatin1(APP_BIN_NAME), Qt::CaseInsensitive) == 0) {
+                                HANDLE hProc = OpenProcess(PROCESS_TERMINATE, FALSE, pe32.th32ProcessID);
+                                if (hProc) {
+                                    TerminateProcess(hProc, 0);
+                                    CloseHandle(hProc);
+                                }
+                            }
+                        }
+                    } while (Process32NextW(hSnap, &pe32));
+                }
+                CloseHandle(hSnap);
+            }
+            Sleep(1000); // Give OS time to fully terminate and release mutexes
+        } else {
+            return 0; // Exit cleanly
+        }
+    }
+#endif
 
     // 8) Build main window
     verax::Logger::info("main: about to construct MainWindow");
