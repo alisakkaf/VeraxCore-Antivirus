@@ -63,6 +63,7 @@ bool SignatureDb::open()
 
 void SignatureDb::close() {
     if (m_db.isOpen()) m_db.close();
+    m_jsonFallback = false;
 }
 
 bool SignatureDb::isOpen() const {
@@ -552,11 +553,16 @@ int SignatureDb::totalSignatures() const
 }
 
 QString SignatureDb::lastUpdate() const {
-    if (m_jsonFallback) return {};
+    if (m_jsonFallback) return QSettings().value("db/last_update").toString();
     return getMeta("last_update");
 }
+
 void SignatureDb::setLastUpdate(const QString &iso) {
-    if (!m_jsonFallback) setMeta("last_update", iso);
+    if (m_jsonFallback) {
+        QSettings().setValue("db/last_update", iso);
+    } else {
+        setMeta("last_update", iso);
+    }
 }
 
 QString SignatureDb::getMeta(const QString &key) const
@@ -666,6 +672,7 @@ void SignatureDb::updateOnline(const QString &baseUrl)
             const int before = m_jsonEntries.size();
             mergeJsonEntries(entries);
             const int added = m_jsonEntries.size() - before;
+            setLastUpdate(QDateTime::currentDateTime().toString(Qt::ISODate));
             emit updateFinished(added, m_jsonEntries.size(), QString());
             return;
         }
