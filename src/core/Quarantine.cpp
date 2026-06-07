@@ -317,7 +317,7 @@ QString Quarantine::moveToVault(const QString &originalPath,
 
 bool Quarantine::restore(int entryId)
 {
-    QSqlDatabase db = QSqlDatabase::database("verax_main");
+    QSqlDatabase db = QSqlDatabase::database("verax_main", false);
     if (!db.isOpen()) return false;
 
     QSqlQuery q(db);
@@ -348,7 +348,7 @@ bool Quarantine::restore(int entryId)
 
 bool Quarantine::permanentDelete(int entryId)
 {
-    QSqlDatabase db = QSqlDatabase::database("verax_main");
+    QSqlDatabase db = QSqlDatabase::database("verax_main", false);
     if (!db.isOpen()) return false;
 
     QSqlQuery q(db);
@@ -368,7 +368,7 @@ bool Quarantine::permanentDelete(int entryId)
 QVector<QuarantineEntry> Quarantine::list() const
 {
     QVector<QuarantineEntry> out;
-    QSqlDatabase db = QSqlDatabase::database("verax_main");
+    QSqlDatabase db = QSqlDatabase::database("verax_main", false);
     if (!db.isOpen()) return out;
 
     QSqlQuery q(db);
@@ -394,7 +394,7 @@ QVector<QuarantineEntry> Quarantine::list() const
 
 int Quarantine::count() const
 {
-    QSqlDatabase db = QSqlDatabase::database("verax_main");
+    QSqlDatabase db = QSqlDatabase::database("verax_main", false);
     if (!db.isOpen()) return 0;
     QSqlQuery q(db);
     if (q.exec("SELECT COUNT(*) FROM quarantine") && q.next())
@@ -404,7 +404,7 @@ int Quarantine::count() const
 
 qint64 Quarantine::totalBytes() const
 {
-    QSqlDatabase db = QSqlDatabase::database("verax_main");
+    QSqlDatabase db = QSqlDatabase::database("verax_main", false);
     if (!db.isOpen()) return 0;
     QSqlQuery q(db);
     if (q.exec("SELECT COALESCE(SUM(size),0) FROM quarantine") && q.next())
