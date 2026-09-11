@@ -577,6 +577,9 @@ VeraxCore يركز على ملفات PE (Portable Executable):
 
 ### 💡 Support the Developer
 
+<!-- DONATE_SECTION:START -->
+<!-- DONATE_SECTION:END -->
+
 <div align="center">
   <i>If you find my tools and projects useful, consider supporting my work. Your support helps keep these projects completely free!</i>
 </div>
